@@ -23,14 +23,14 @@ app.post("/chat", async (req, res) => {
 
     try {
         const response = await axios.post(
-            "https://api.groq.com/openai/v1/chat/completions", // Groq's Endpoint
+            "https://api.groq.com/openai/v1/chat/completions", 
             {
-                model: "llama3-8b-8192", // High-speed free model
+                model: "llama-3.1-8b-instant", 
                 messages: history.slice(-6) 
             },
             {
                 headers: {
-                    // Using your Groq key from .env
+                
                     Authorization: `Bearer ${process.env.GROK_API_KEY}`, 
                     "Content-Type": "application/json"
                 }
