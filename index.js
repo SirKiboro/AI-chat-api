@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Allows external requests
 app.use(express.json()); // Enables JSON parsing
 
-let history = []; 
+let history = [
+    { role: "system", content: "You are a helpful AI assistant running via the Groq Llama 3.1 model." }
+]; 
 
 app.get("/", (req, res) => {
     res.json({ status: "Server running" });
